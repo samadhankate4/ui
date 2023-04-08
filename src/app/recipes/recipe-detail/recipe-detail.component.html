@@ -15,7 +15,7 @@
                <span class="caret"></span>
            </button>
            <ul class="dropdown-menu">
-               <li><a href="#">To shopping list</a></li>
+               <li><a href="#" (click)="addIngridentsToShoppingList()">To shopping list</a></li>
                <li><a href="#">Edit recipe</a></li>
                <li><a href="#">Delete recipe</a></li>
            </ul>
@@ -29,6 +29,8 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Ingridient
+       <ul class="list-group">
+        <li class="list-group-item" *ngFor="let ingrident of recipe.ingridents">{{ingrident.name}}({{ingrident.amount}})</li>
+       </ul>
     </div>
 </div>
