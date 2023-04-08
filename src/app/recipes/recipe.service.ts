@@ -20,7 +20,9 @@ export class RecipeService{
       constructor(private shoppingService:ShopingService){
 
       }
-
+      getRecipe(index:number){
+       return  this.recipes.slice()[index];
+      }
       getRecipes(){
         return this.recipes.slice();
       }
@@ -28,4 +30,14 @@ export class RecipeService{
         this.shoppingService.addIngridents(ingridents)
 
       }
+      addNewRecipe(newRecipe:Recipe){
+        this.recipes.push(newRecipe);
+      }
+      editRecipe(index:number,newRecipe:Recipe){
+        
+            this.recipeSelected[index].name=newRecipe.name;
+            this.recipeSelected[index].description=newRecipe.description;
+          
+        }
+      
 }

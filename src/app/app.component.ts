@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myRecipe';
-  loadedFeature="recipe";
-  onNavigate(fetature:string){
-this.loadedFeature=fetature;
+ 
 
-  }
 }
