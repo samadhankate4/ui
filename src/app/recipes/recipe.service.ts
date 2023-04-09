@@ -2,11 +2,11 @@ import { EventEmitter,Injectable } from "@angular/core";
 import { Recipe } from "./recipe.model";
 import { Ingrident } from "../shared/ingrident.model";
 import { ShopingService } from "../shopping-list/shoping.service";
+import { Subject } from "rxjs";
 
 
 @Injectable()
 export class RecipeService{
-    recipeSelected=new EventEmitter<Recipe>();
     recipes:Recipe[]=[
         new Recipe("test recipe",
         "myfirst recipe",
@@ -35,8 +35,8 @@ export class RecipeService{
       }
       editRecipe(index:number,newRecipe:Recipe){
         
-            this.recipeSelected[index].name=newRecipe.name;
-            this.recipeSelected[index].description=newRecipe.description;
+            //this.recipeSelected[index].name=newRecipe.name;
+            //this.recipeSelected[index].description=newRecipe.description;
           
         }
       
