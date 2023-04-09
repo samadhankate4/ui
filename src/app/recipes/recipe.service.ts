@@ -21,10 +21,10 @@ export class RecipeService{
 
       }
       getRecipe(index:number){
-       return  this.recipes.slice()[index];
+       return  this.recipes[index];
       }
       getRecipes(){
-        return this.recipes.slice();
+        return this.recipes;
       }
       addIngridentsToShoppingList(ingridents:Ingrident[]){
         this.shoppingService.addIngridents(ingridents)
@@ -33,11 +33,10 @@ export class RecipeService{
       addNewRecipe(newRecipe:Recipe){
         this.recipes.push(newRecipe);
       }
-      editRecipe(index:number,newRecipe:Recipe){
-        
-            //this.recipeSelected[index].name=newRecipe.name;
-            //this.recipeSelected[index].description=newRecipe.description;
-          
+
+        updateRecipe(id:number,recipe:Recipe){
+                    this.recipes[id]=recipe;
+
         }
       
 }

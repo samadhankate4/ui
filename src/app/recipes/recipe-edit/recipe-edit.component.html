@@ -1,1 +1,67 @@
-<p>recipe-edit works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <form  [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-success">{{editMode?"Update":"Save"}}</button>
+                <button type="button" class="btn btn-danger">Clear</button>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" formControlName="name" id="name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image Url</label>
+                        <input type="text" name="imagePath" formControlName="imagePath" id="imagePath" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="" alt="" srcset="" class="img-responsive">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" formControlName="description" id="description" rows="6"></textarea>                   
+                         </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" formArrayName="ingridents" >
+                    <div class="row" 
+                    *ngFor="let ingridentCtl of getControls();let i=index" 
+                    [formGroupName]="i"
+                    >
+                        <div class="col-xs-8">
+                            <input type="text" name="" formControlName="name" id="" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                            <input type="number" formControlName="amount" name="" id="" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                            <button class="btn btn-danger">X</button>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col xs-12">
+                            <button type="button" class="btn btn-success" (click)="addNewIngrident()"> Add ingrident</button>
+                        </div>
+                    </div>
+                       
+                
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
