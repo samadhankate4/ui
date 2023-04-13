@@ -8,6 +8,7 @@ export class ShopingService{
       ];
 
       subject= new Subject<number>();
+      
 
       getIngridents(){
        return this.ingridents;

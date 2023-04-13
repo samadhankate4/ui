@@ -9,14 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
  
  recipes:Recipe[];
 
   constructor(private recipeService:RecipeService,private route:Router,private activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.recipes=this.recipeService.getRecipes();
+    this.recipeService.getRecipes();
+    this.recipeService.recipeSubject.subscribe(recipes=>{
+      console.log(recipes);
+      this.recipes=recipes;
+      
+    })
+   
   }
   createNewRecipe(){
   this.route.navigate(['new'],{relativeTo:this.activeRoute});
